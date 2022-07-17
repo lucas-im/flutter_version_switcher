@@ -21,7 +21,6 @@ case $1 in
                 mv "$path/flutter" "$path/flutter-$curr_ver";
                 mv "$path/flutter-$2" "$path/flutter";
                 echo "Switched to Flutter SDK version: $2";
-                flutter doctor;
                 exit 0;
             else
                 echo "Flutter SDK version $2 not found.";
@@ -34,7 +33,7 @@ case $1 in
         ;;
     -i | --import )
         echo "Importing new Flutter SDK from Downloads folder.";
-        versions=$(find $HOME/Downloads -maxdepth 1 -type f -name "flutter_macos_*" | sed 's/^.*flutter_macos_//' | sed 's/\-stable.zip//');
+        versions=$(find $HOME/Downloads -maxdepth 1 -type f -name "flutter_macos_*" | sed 's/^.*flutter_macos_//' | sed 's/\-stable.zip$//');
         if [ $versions ] ; then
             echo "Available versions:";
             echo "$versions";

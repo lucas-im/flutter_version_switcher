@@ -17,3 +17,10 @@
     sudo chmod 755 /usr/local/bin/fvs
     <<Now you can use fvs command.>>
     
+<br/>
+
+## Change Log
+- v1.0.1: 
+    - Removed flutter doctor command execution after Flutter SDK version switch.
+    - Fixed a import bug.
+- v1.0.0: Initial release.
